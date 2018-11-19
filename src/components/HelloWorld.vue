@@ -8,15 +8,20 @@
         <span v-else>{{slotProps.value[slotProps.title.key]}}</span>
       </template> -->
     </base-table>
+
+    <el-button @click="handleClick">默认按钮</el-button>
+    <base-print></base-print>
   </div>
 </template>
 
 <script>
 import BaseTable from './BaseTable'
+import BasePrint from './BasePrint'
 
 export default {
   components: {
-    BaseTable
+    BaseTable,
+    BasePrint
   },
   data () {
     return {
@@ -63,6 +68,11 @@ export default {
           sex: 1
         }
       ]
+    }
+  },
+  methods: {
+    handleClick () {
+      window.print()
     }
   }
 }
